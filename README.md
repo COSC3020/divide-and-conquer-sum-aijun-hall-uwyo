@@ -26,13 +26,25 @@ and solve it as we did in the lectures. Give the final $\Theta$ complexity.
 Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
 
+## Aijun Hall
+
 I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
 
-Referenced GeeksforGeeks website on merge sort algorithm here: https://www.geeksforgeeks.org/merge-sort/.
+- Referenced GeeksforGeeks website on merge sort algorithm here: https://www.geeksforgeeks.org/merge-sort/.
 
-Used Chatgpt to work through and figure out recurison, since I was struggling with figuring out where the splits were needed here:
+- Used Chatgpt to work through and figure out recurison, since I was struggling with figuring out where the splits were needed here:
 ```
 var sum1 = divideAndConquerSum(a.slice(0, split_size));
 var sum2 = divideAndConquerSum(a.slice(split_size, 2 * split_size));
 var sum3 = divideAndConquerSum(a.slice(2 * split_size));
 ```
+
+# Answering Runtime Analysis
+
+The runtime of this implemented algorithm is dependent on the fact it uses 3 recursive calls for all cases except the base case. First looking at base cases, we have a constant runtime of O(1) because summing numbers is constant work.
+
+If we ignore the slicing recursion then we have T(n) = 3 * T(n / 3) + O(1) = Θ(n)
+
+However with the slicing recursion, we must consider the overhead of Javascript introducing additional copying at each recursion level. Slicing is Θ(n) per level, and Θ(log(n)) for the depth of the array being sliced. This is because we are copying K elements at each level of recursion
+
+T(n) = 3 * T (n / 3) + O(n) => Θ(n * log(n))
