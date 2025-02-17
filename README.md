@@ -25,3 +25,14 @@ and solve it as we did in the lectures. Give the final $\Theta$ complexity.
 
 Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
+
+I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
+
+Referenced GeeksforGeeks website on merge sort algorithm here: https://www.geeksforgeeks.org/merge-sort/.
+
+Used Chatgpt to work through and figure out recurison, since I was struggling with figuring out where the splits were needed here:
+```
+var sum1 = divideAndConquerSum(a.slice(0, split_size));
+var sum2 = divideAndConquerSum(a.slice(split_size, 2 * split_size));
+var sum3 = divideAndConquerSum(a.slice(2 * split_size));
+```
