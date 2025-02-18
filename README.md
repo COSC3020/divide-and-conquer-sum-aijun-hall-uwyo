@@ -41,10 +41,14 @@ var sum3 = divideAndConquerSum(a.slice(2 * split_size));
 
 # Answering Runtime Analysis
 
-The runtime of this implemented algorithm is dependent on the fact it uses 3 recursive calls for all cases except the base case. First looking at base cases, we have a constant runtime of O(1) because summing numbers is constant work.
+The runtime of this implemented algorithm is dependent on the fact it uses 3 recursive calls for all cases except the base cases.
 
-If we ignore the slicing recursion then we have T(n) = 3 * T(n / 3) + O(1) = Θ(n)
+**Recurrence relation for T(n):**
 
-However with the slicing recursion, we must consider the overhead of Javascript introducing additional copying at each recursion level. Slicing is Θ(n) per level, and Θ(log(n)) for the depth of the array being sliced. This is because we are copying K elements at each level of recursion
 
-T(n) = 3 * T (n / 3) + O(n) => Θ(n * log(n))
+![image](https://github.com/user-attachments/assets/52444936-b489-4d1e-b286-192c6914ec85)
+
+**Solving by substitution:**
+
+
+![image](https://github.com/user-attachments/assets/081e8432-820d-49f3-8320-414fc2584b43)
