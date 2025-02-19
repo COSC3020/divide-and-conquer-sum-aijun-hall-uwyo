@@ -5,7 +5,7 @@ approach to sort an array of values There are many more algorithms that take
 such an approach Implement a function that computes the sum of an array of
 integers using divide and conquer, using the template in `codejs` Test your
 new function; I've provided some basic testing code that uses
-[jsverify](https://jsverify.github.io/) in `codetestjs`
+[jsverify](https://jsverify.github.io/) in `code.test.js`
 
 The recursive calls sum up the numbers in the base case, and "merges" the sums
 of the recursive calls otherwise For example, the return value for the array `a
@@ -30,7 +30,7 @@ most important part Add your answer to this markdown file
 
 I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models All of the work is my own, except where stated otherwise I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice
 
-- Referenced GeeksforGeeks website on merge sort algorithm here: https://wwwgeeksforgeeksorg/merge-sort/
+- Referenced GeeksforGeeks website on merge sort algorithm here: https://www.geeksforgeeks.org/merge-sort/
 
 - Used Chatgpt to work through and figure out recurison, since I was struggling with figuring out where the splits were needed here:
 ```
