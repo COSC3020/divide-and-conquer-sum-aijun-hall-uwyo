@@ -5,7 +5,7 @@ approach to sort an array of values There are many more algorithms that take
 such an approach Implement a function that computes the sum of an array of
 integers using divide and conquer, using the template in `codejs` Test your
 new function; I've provided some basic testing code that uses
-[jsverify](https://jsverifygithubio/) in `codetestjs`
+[jsverify](https://jsverify.github.io/) in `codetestjs`
 
 The recursive calls sum up the numbers in the base case, and "merges" the sums
 of the recursive calls otherwise For example, the return value for the array `a
