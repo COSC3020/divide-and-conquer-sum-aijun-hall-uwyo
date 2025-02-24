@@ -32,5 +32,5 @@ function divideAndConquerSum(a) {
     var sum3 = divideAndConquerSum(a.slice(2 * split_size));
 
     // Combine (merge) the results of the three sums
-    return sumArray([sum1, sum2, sum3]);
+    return (sum1 + sum2 + sum3);
   }
