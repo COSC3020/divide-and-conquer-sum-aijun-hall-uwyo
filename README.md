@@ -49,7 +49,7 @@ $$
   T(n) = 
   \begin{cases}
   1 & \text{if } n \le 1,\\
-  3T\bigl(\tfrac{n}{3}\bigr) +n & \text{if } n > 1
+  3T\bigl(\tfrac{n}{3}\bigr) & \text{if } n > 1
   \end{cases}
 $$
 
@@ -57,66 +57,62 @@ $$
 
 $$
   T(n)
-  = 3T\Bigl(\frac{n}{3}\Bigr) + n
+  = 3T\Bigl(\frac{n}{3}\Bigr)
 $$
 
 $$
   T\Bigl(\frac{n}{3}\Bigr)
-  = 3T\Bigl(\frac{\frac{n}{3}}{3}\Bigr) + \frac{n}{3}
+  = 3T\Bigl(\frac{\frac{n}{3}}{3}\Bigr)
 $$
 
 $$
-= 3T\biggl(\frac{n}{3^2}\biggr) + \frac{n}{3}
+= 3T\biggl(\frac{n}{3^2}\biggr)
 $$
 
 $$
   T\biggl(\frac{n}{3}\biggr)
-  = 3T\biggl(\frac{n}{9}\biggr) + \frac{n}{3}
+  = 3T\biggl(\frac{n}{9}\biggr)
 $$
 
 <hr>
 
 $$
   T(n)
-  = 3T\Bigl(\frac{n}{3}\Bigr) + n
+  = 3T\Bigl(\frac{n}{3}\Bigr)
 $$
 
 $$
   T(n)
-  = 3 \Bigl[3T\bigl(\tfrac{n}{9}\bigr) + \tfrac{n}{3} \Bigr] + n
+  = 3 \Bigl[3T\bigl(\tfrac{n}{9}\bigr) \Bigr]
 $$
 
 $$
-  = 9T\biggl(\frac{n}{9}\biggr) + n + n
+  = 9T\biggl(\frac{n}{9}\biggr)
 $$
 
 $$
-  = 9T\biggl(\frac{n}{9}\biggr) + 2n
+  = 9T\biggl(\frac{n}{9}\biggr)
 $$
 
 <hr>
 
 $$
   T\biggl(\frac{n}{9}\biggr)
-  = 3T\biggl(\frac{\tfrac{n}{9}}{3}\biggr) + \frac{n}{9}
+  = 3T\biggl(\frac{\tfrac{n}{9}}{3}\biggr)
 $$
 
 $$
-  = 3T\biggl(\frac{n}{27}\biggr) + \frac{n}{9}
+  = 3T\biggl(\frac{n}{27}\biggr)
 $$
 
 <hr>
 
 $$
-  T(n) = 9 \Bigl[3T\bigl(\tfrac{n}{27}\bigr) + \tfrac{n}{9}\Bigr] + 2n
+  T(n) = 9 \Bigl[3T\bigl(\tfrac{n}{27}\bigr)\Bigr]
 $$
 
 $$
-  = 27T\bigl(\tfrac{n}{27}\bigr) + n + 2n
-$$
-
-$$
-  = 27T\bigl(\tfrac{n}{27}\bigr) + 3n
+  = 27T\bigl(\tfrac{n}{27}\bigr)
 $$
 
 <hr>
@@ -124,17 +120,16 @@ $$
 $$
   T(n)
   = 3^i T\biggl(\frac{n}{3^i}\biggr)
-    + in
   \qquad\text{where } i = \log_3(n)
 $$
 
 $$
   = 3^{\log_3(n)} T(1)
-    + n\log_3(n)
+    + \log_3(n)
 $$
 
 $$
-  = n + n\log_3(n) =
-  \Theta\bigl(n\log(n)\bigr)
+  = \log_3(n) =
+  \Theta\bigl(log(n)\bigr)
 $$
 
