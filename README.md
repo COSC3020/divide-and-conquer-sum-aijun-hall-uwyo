@@ -49,7 +49,7 @@ $$
   T(n) = 
   \begin{cases}
   1 & \text{if } n \le 1,\\
-  3T\bigl(\tfrac{n}{3}\bigr) & \text{if } n > 1
+  3T\bigl(\tfrac{n}{3}\bigr) + C & \text{if } n > 1
   \end{cases}
 $$
 
@@ -57,79 +57,110 @@ $$
 
 $$
   T(n)
-  = 3T\Bigl(\frac{n}{3}\Bigr)
+  = 3T\Bigl(\frac{n}{3}\Bigr) + C
 $$
 
 $$
   T\Bigl(\frac{n}{3}\Bigr)
-  = 3T\Bigl(\frac{\frac{n}{3}}{3}\Bigr)
+  = 3T\Bigl(\frac{\frac{n}{3}}{3}\Bigr) + C
 $$
 
 $$
-= 3T\biggl(\frac{n}{3^2}\biggr)
+= 3T\biggl(\frac{n}{3^2}\biggr) + C
 $$
 
 $$
   T\biggl(\frac{n}{3}\biggr)
-  = 3T\biggl(\frac{n}{9}\biggr)
+  = 3T\biggl(\frac{n}{9}\biggr) + C
 $$
 
 <hr>
 
 $$
   T(n)
-  = 3T\Bigl(\frac{n}{3}\Bigr)
+  = 3T\Bigl(\frac{n}{3}\Bigr) + C
 $$
 
 $$
   T(n)
-  = 3 \Bigl[3T\bigl(\tfrac{n}{9}\bigr) \Bigr]
+  = 3 \Bigl[3T\bigl(\tfrac{n}{9}\bigr) + C \Bigr] + C
 $$
 
 $$
-  = 9T\biggl(\frac{n}{9}\biggr)
+  = 9T\biggl(\frac{n}{9}\biggr) + 3C + C
 $$
 
 $$
-  = 9T\biggl(\frac{n}{9}\biggr)
+  = 9T\biggl(\frac{n}{9}\biggr) + 4C
 $$
 
 <hr>
 
 $$
   T\biggl(\frac{n}{9}\biggr)
-  = 3T\biggl(\frac{\tfrac{n}{9}}{3}\biggr)
+  = 3T\biggl(\frac{\tfrac{n}{9}}{3}\biggr) + C
 $$
 
 $$
-  = 3T\biggl(\frac{n}{27}\biggr)
-$$
-
-<hr>
-
-$$
-  T(n) = 9 \Bigl[3T\bigl(\tfrac{n}{27}\bigr)\Bigr]
-$$
-
-$$
-  = 27T\bigl(\tfrac{n}{27}\bigr)
+  = 3T\biggl(\frac{n}{27}\biggr) + C
 $$
 
 <hr>
 
 $$
-  T(n)
-  = 3^i T\biggl(\frac{n}{3^i}\biggr)
-  \qquad\text{where } i = \log_3(n)
+  T(n) = 9 \Bigl[3T\bigl(\tfrac{n}{27}\bigr) + C \Bigr] + 4C
 $$
 
 $$
-  = 3^{\log_3(n)} T(1)
-    + \log_3(n)
+  = 27T\bigl(\tfrac{n}{27}\bigr) + 13C
+$$
+
+<hr>
+
+$$
+\text{1. If } n^{\log_b a} > f(n), \text{ then:}
 $$
 
 $$
-  = \log_3(n) =
-  \Theta\bigl(log(n)\bigr)
+T(n) \in O\big(n^{\log_b a}\big)
 $$
+
+$$
+\text{2. If } n^{\log_b a} < f(n), \text{ then:}
+$$
+
+$$
+T(n) \in O\big(f(n)\big)
+$$
+
+$$
+\text{3. If } n^{\log_b a} = f(n), \text{ then:}
+$$
+
+$$
+T(n) \in O\big(n^{\log_b a} \log n\big)
+$$
+<hr>
+
+$$
+  3T\bigl(\tfrac{n}{3}\bigr) + C
+$$
+- \( a = 3 \)
+- \( b = 3 \)
+- \( f(n) = c \)
+
+$$
+  n^{\log_3 3} = n^1 = n
+$$
+
+Since:
+
+$$
+  n^{\log_3 3} > f(n) = c
+$$
+
+$$
+  T(n) \in O(n)
+$$
+
 
